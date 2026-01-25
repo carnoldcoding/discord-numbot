@@ -1,0 +1,28 @@
+name: Daily Random Number
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # Midnight US Eastern (UTC)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    environment: discord   # MUST MATCH your environment name
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python daily_number.py
