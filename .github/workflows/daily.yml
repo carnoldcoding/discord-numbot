@@ -2,7 +2,7 @@ name: Daily Random Number
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # Midnight US Eastern (UTC)
+    - cron: "36 17 * * *"   # Midnight US Eastern (UTC)
   workflow_dispatch:
 
 jobs:
