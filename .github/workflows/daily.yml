@@ -2,14 +2,14 @@ name: Daily Random Number
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # Midnight US Eastern (UTC)
+    - cron: "25 17 * * *"   # Midnight US Eastern (UTC)
   workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
 
-    environment: discord   # MUST MATCH your environment name
+    environment: discord  
 
     steps:
       - uses: actions/checkout@v4
