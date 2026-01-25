@@ -2,15 +2,16 @@ name: Daily Random Number Test
 
 on:
   schedule:
+    # Debug schedule - every 5 minutes for testing
     - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
-
-    environment: discord  
-
+    environment: discord
+    permissions:
+      contents: read  # Needed for scheduled runs to access environment secrets
     steps:
       - uses: actions/checkout@v4
 
