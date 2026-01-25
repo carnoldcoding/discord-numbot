@@ -1,8 +1,8 @@
-name: Daily Random Number
+name: Daily Random Number Test
 
 on:
   schedule:
-    - cron: "36 17 * * *"   # Midnight US Eastern (UTC)
+    - cron: "50 17 * * *"  # 12:50 PM EST
   workflow_dispatch:
 
 jobs:
